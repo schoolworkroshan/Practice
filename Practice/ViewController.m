@@ -27,7 +27,21 @@
     if([first.text isEqualToString:second.text])
     {
     //do something
+        
+        //Create Object for another navigation controller
+        SecondView *second = [[SecondView alloc] init];
+        
+        //  transition styles.
+        second.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+        [self presentModalViewController:second animated:YES];
     }
-    
+    else{
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry"
+                                                        message:@"You didn't enter the matching pins"
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
 }
 @end

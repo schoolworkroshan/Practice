@@ -14,6 +14,8 @@
 		C9D781251A892E5600308216 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9D781241A892E5600308216 /* Images.xcassets */; };
 		C9D781281A892E5600308216 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9D781261A892E5600308216 /* LaunchScreen.xib */; };
 		C9D781341A892E5700308216 /* PracticeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D781331A892E5700308216 /* PracticeTests.m */; };
+		C9D781431A89531C00308216 /* SecondView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D781411A89531C00308216 /* SecondView.m */; };
+		C9D781441A89531C00308216 /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9D781421A89531C00308216 /* SecondView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,9 @@
 		C9D7812D1A892E5600308216 /* PracticeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PracticeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9D781321A892E5700308216 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9D781331A892E5700308216 /* PracticeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PracticeTests.m; sourceTree = "<group>"; };
+		C9D781401A89531C00308216 /* SecondView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondView.h; sourceTree = "<group>"; };
+		C9D781411A89531C00308216 /* SecondView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondView.m; sourceTree = "<group>"; };
+		C9D781421A89531C00308216 /* SecondView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +90,9 @@
 				C9D7811C1A892E5600308216 /* AppDelegate.m */,
 				C9D7811E1A892E5600308216 /* ViewController.h */,
 				C9D7811F1A892E5600308216 /* ViewController.m */,
+				C9D781401A89531C00308216 /* SecondView.h */,
+				C9D781411A89531C00308216 /* SecondView.m */,
+				C9D781421A89531C00308216 /* SecondView.xib */,
 				C9D781211A892E5600308216 /* Main.storyboard */,
 				C9D781241A892E5600308216 /* Images.xcassets */,
 				C9D781261A892E5600308216 /* LaunchScreen.xib */,
@@ -201,6 +209,7 @@
 			files = (
 				C9D781231A892E5600308216 /* Main.storyboard in Resources */,
 				C9D781281A892E5600308216 /* LaunchScreen.xib in Resources */,
+				C9D781441A89531C00308216 /* SecondView.xib in Resources */,
 				C9D781251A892E5600308216 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,6 +230,7 @@
 			files = (
 				C9D781201A892E5600308216 /* ViewController.m in Sources */,
 				C9D7811D1A892E5600308216 /* AppDelegate.m in Sources */,
+				C9D781431A89531C00308216 /* SecondView.m in Sources */,
 				C9D7811A1A892E5600308216 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
