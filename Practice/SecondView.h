@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondView : UIViewController
+@interface SecondView : UIViewController <UITableViewDataSource, UITableViewDelegate>
+- (IBAction)AddButton:(id)sender;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) NSArray *array;
+
+
 
 @end

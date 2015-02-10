@@ -24,7 +24,7 @@
 
 - (IBAction)submit:(id)sender {
     [first resignFirstResponder];
-    if([first.text isEqualToString:second.text])
+    if([first.text isEqualToString:second.text]&&(first.text.length==4))
     {
     //do something
         
@@ -37,7 +37,7 @@
     }
     else{
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry"
-                                                        message:@"You didn't enter the matching pins"
+                                                        message:@"You didn't enter the matching pins or length is not 4"
                                                        delegate:self
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
