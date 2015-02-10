@@ -8,36 +8,69 @@
 
 #import "SecondView.h"
 
-@interface SecondView ()
 
-@end
 
 @implementation SecondView
-
+@synthesize  viewTable, tableData;
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    self.navigationItem.rightBarButtonItem=self.editButtonItem;
+    // Do any additional setup after loading the view from its
+        // Initialize table data
+        tableData = [NSMutableArray arrayWithObjects:@"apple",@"ball",@"cat", nil];
+    }
     
-}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+//First Making the contents of the table editable
+- (void) setEditing:(BOOL)editing animated:(BOOL)animated{
+    [super setEditing:YES animated:YES];
+    [viewTable setEditing:editing animated:YES];
+    
+    
 }
-*/
 
-- (IBAction)AddButton:(id)sender {
+//Make the given row  editable
+-(BOOL) tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath   {
+    //
+    return YES;
 }
+
+//Asks the user to commit to add or remove the contents of the row
+- (void)tableView:(UITableView *)tableView
+commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+forRowAtIndexPath:(NSIndexPath *)indexPath{
+    //If editing style is delete
+    if (editingStyle==UITableViewCellEditingStyleDelete){
+        //Remove it from the mutable array first at given row
+        [tableData removeObjectAtIndex:indexPath.row];
+        //Remove from the table View
+        [viewTable deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+    }
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [tableData count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *Items = @"Item";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:Items];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Items];
+    }
+    
+    cell.textLabel.text = [tableData objectAtIndex:indexPath.row];
+    return cell;
+}
+
+
 @end
