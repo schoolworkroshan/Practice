@@ -16,7 +16,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its
         // Initialize table data
-        tableData = [NSMutableArray arrayWithObjects:@"apple",@"ball",@"cat", nil];
+        tableData = [[NSMutableArray alloc]initWithObjects:@"apple",@"ball",@"cat", @"hat",nil];
     }
     
 
@@ -34,28 +34,12 @@
     
 }
 
-//Make the given row  editable
--(BOOL) tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath   {
-    //
-    return YES;
-}
-
-//Asks the user to commit to add or remove the contents of the row
-- (void)tableView:(UITableView *)tableView
-commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
-forRowAtIndexPath:(NSIndexPath *)indexPath{
-    //If editing style is delete
-    if (editingStyle==UITableViewCellEditingStyleDelete){
-        //Remove it from the mutable array first at given row
-        [tableData removeObjectAtIndex:indexPath.row];
-        //Remove from the table View
-        [viewTable deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-        
-    }
-}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [tableData count];
+    return tableData.count;
+}
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -71,6 +55,28 @@ forRowAtIndexPath:(NSIndexPath *)indexPath{
     cell.textLabel.text = [tableData objectAtIndex:indexPath.row];
     return cell;
 }
+
+
+//Make the given row  editable
+-(BOOL) tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath   {
+    //
+    return YES;
+}
+
+//Asks the user to commit to add or remove the contents of the row
+- (void)tableView:(UITableView *)tableView
+commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+forRowAtIndexPath:(NSIndexPath *)indexPath{
+    //If editing style is delete
+    if (editingStyle==UITableViewCellEditingStyleDelete){
+        //Remove it from the mutable array first at given row
+        [tableData removeObjectAtIndex:indexPath.row];
+        //Remove from the table View
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+    }
+}
+
 
 
 @end

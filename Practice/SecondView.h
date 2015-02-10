@@ -10,7 +10,7 @@
 
 @interface SecondView : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *viewTable;
-@property NSMutableArray *tableData;
+@property (strong,nonatomic) NSMutableArray *tableData;
 
 
 

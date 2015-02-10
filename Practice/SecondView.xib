@@ -17,11 +17,6 @@
                 <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ice-UD-4Ga">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                     <color key="barTintColor" red="0.80494928359985352" green="0.61431768546070842" blue="0.73878091658031553" alpha="1" colorSpace="calibratedRGB"/>
-                    <items>
-                        <navigationItem title="Items" id="NVd-hD-5GK">
-                            <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="JRq-9b-AYV"/>
-                        </navigationItem>
-                    </items>
                 </navigationBar>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="DEv-tV-BpL">
                     <rect key="frame" x="0.0" y="44" width="375" height="623"/>
